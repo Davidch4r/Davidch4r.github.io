@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>David Pidugu</title>
+    <meta
+      name="description"
+      content="David Pidugu — Computer Science student at the University of Michigan. Theory of computation research, graph algorithms, and machine learning."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="masthead">
+        <div class="masthead-row">
+          <h1 class="name">David Pidugu</h1>
+          <nav class="nav">
+            <a href="#research">Research</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+        <p class="role">
+          Computer Science, B.S.E. — University of Michigan, expected May 2027
+        </p>
+        <p class="intro">
+          I study theory of computation and work on graph algorithms,
+          distributed systems, and cryptography at the
+          <span class="ink">University of Michigan Theory of Computation Lab</span>.
+          My work spans from proving things about graphs to building the
+          systems that use them.
+        </p>
+        <ul class="contact-row" id="contact-row">
+          <!-- populated by main.ts -->
+        </ul>
+      </header>
+
+      <main>
+        <section id="research" class="block">
+          <h2 class="block-title"><span class="block-label">01</span> Publications &amp; Research</h2>
+          <div id="publications-list" class="pub-list">
+            <!-- populated by main.ts -->
+          </div>
+        </section>
+
+        <section id="experience" class="block">
+          <h2 class="block-title"><span class="block-label">02</span> Experience</h2>
+          <div id="experience-list" class="exp-list">
+            <!-- populated by main.ts -->
+          </div>
+        </section>
+
+        <section id="projects" class="block">
+          <h2 class="block-title"><span class="block-label">03</span> Projects</h2>
+          <div id="projects-list" class="proj-list">
+            <!-- populated by main.ts -->
+          </div>
+        </section>
+
+        <section id="skills" class="block">
+          <h2 class="block-title"><span class="block-label">04</span> Technical Skills</h2>
+          <div id="skills-list" class="skills-list">
+            <!-- populated by main.ts -->
+          </div>
+        </section>
+
+        <section id="education" class="block">
+          <h2 class="block-title"><span class="block-label">05</span> Education</h2>
+          <div class="edu-block">
+            <div class="edu-row">
+              <div>
+                <p class="edu-school">University of Michigan — College of Engineering</p>
+                <p class="edu-degree">B.S.E. Computer Science, Minor in Mathematics</p>
+              </div>
+              <p class="edu-date">Expected May 2027</p>
+            </div>
+            <p class="edu-detail">Major GPA: 3.9 · Michigan Data Science Team · Michigan Hackers</p>
+            <p class="edu-coursework">
+              Data Structures &amp; Algorithms, CS Theory, Theory of Algorithms, Computational
+              Complexity, Computer Organization, Graph Algorithms, Advanced Cryptography,
+              Computer Security, Zero Knowledge Proofs, Lattice Cryptography, Advanced
+              Programming Principles, Real Analysis, Honors Abstract Algebra, Coding Theory
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer id="contact" class="site-footer">
+        <p class="footer-line">
+          Based in Miramar, Florida — currently in Ann Arbor, Michigan.
+        </p>
+        <ul class="contact-row" id="contact-row-footer">
+          <!-- populated by main.ts -->
+        </ul>
+        <p class="footer-note">Last updated <span id="last-updated"></span></p>
+      </footer>
+    </div>
+
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>

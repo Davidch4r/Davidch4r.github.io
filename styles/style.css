@@ -1,0 +1,430 @@
+/* ---------- Design tokens ---------- */
+
+:root {
+  --color-paper: #f7f6f3;
+  --color-ink: #1a1a1a;
+  --color-ink-soft: #5b6168;
+  --color-accent: #2b4570;
+  --color-rule: #d8d5ce;
+  --color-card: #ffffff;
+
+  --font-display: "Source Serif 4", Georgia, serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+
+  --max-width: 720px;
+}
+
+/* ---------- Reset ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+/* ---------- Base ---------- */
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.page {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--space-2);
+}
+
+/* ---------- Masthead ---------- */
+
+.masthead {
+  padding-block: var(--space-5) var(--space-4);
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.masthead-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-1);
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.nav {
+  display: flex;
+  gap: var(--space-3);
+  font-size: 0.85rem;
+}
+
+.nav a {
+  color: var(--color-ink-soft);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.nav a:hover {
+  color: var(--color-ink);
+  border-color: var(--color-ink-soft);
+}
+
+.role {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  margin-bottom: var(--space-3);
+}
+
+.intro {
+  max-width: 58ch;
+  color: var(--color-ink-soft);
+  font-size: 1.02rem;
+}
+
+.intro .ink {
+  color: var(--color-ink);
+  font-weight: 500;
+}
+
+.contact-row {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+  font-size: 0.9rem;
+}
+
+.contact-row a {
+  text-decoration: none;
+  color: var(--color-ink);
+  border-bottom: 1px solid var(--color-rule);
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.contact-row a:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* ---------- Section blocks ---------- */
+
+.block {
+  padding-block: var(--space-5);
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.block:last-of-type {
+  border-bottom: none;
+}
+
+.block-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+.block-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-ink-soft);
+  letter-spacing: 0.05em;
+}
+
+.bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-top: var(--space-1);
+  color: var(--color-ink-soft);
+  font-size: 0.95rem;
+}
+
+.bullets li {
+  position: relative;
+  padding-left: 1.1rem;
+}
+
+.bullets li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--color-rule);
+}
+
+/* ---------- Publications ---------- */
+
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.pub {
+  background: var(--color-card);
+  border: 1px solid var(--color-rule);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 4px;
+  padding: var(--space-3);
+}
+
+.pub-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+.pub-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.pub-year {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-ink-soft);
+  white-space: nowrap;
+}
+
+.pub-venue {
+  font-size: 0.88rem;
+  color: var(--color-accent);
+  margin-top: 0.2rem;
+  margin-bottom: var(--space-1);
+}
+
+/* ---------- Experience ---------- */
+
+.exp-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.exp-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.exp-org {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.exp-role {
+  font-size: 0.88rem;
+  color: var(--color-ink-soft);
+  margin-top: 0.15rem;
+}
+
+.exp-date {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--color-ink-soft);
+  white-space: nowrap;
+}
+
+/* ---------- Projects ---------- */
+
+.proj-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.proj-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.proj-stack {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--color-accent);
+  margin-top: 0.2rem;
+  margin-bottom: var(--space-1);
+}
+
+/* ---------- Skills ---------- */
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.skill-group {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: var(--space-2);
+  align-items: baseline;
+}
+
+.skill-label {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--color-ink-soft);
+  letter-spacing: 0.03em;
+}
+
+.skill-items {
+  font-size: 0.92rem;
+  color: var(--color-ink);
+}
+
+/* ---------- Education ---------- */
+
+.edu-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.edu-school {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.edu-degree {
+  font-size: 0.9rem;
+  color: var(--color-ink-soft);
+  margin-top: 0.15rem;
+}
+
+.edu-date {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--color-ink-soft);
+}
+
+.edu-detail {
+  font-size: 0.88rem;
+  color: var(--color-ink-soft);
+  margin-top: var(--space-2);
+}
+
+.edu-coursework {
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+  margin-top: var(--space-1);
+  line-height: 1.7;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  padding-block: var(--space-4) var(--space-5);
+}
+
+.footer-line {
+  font-size: 0.9rem;
+  color: var(--color-ink-soft);
+}
+
+.footer-note {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-ink-soft);
+  margin-top: var(--space-3);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 600px) {
+  .masthead-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-1);
+  }
+
+  .nav {
+    gap: var(--space-2);
+  }
+
+  .name {
+    font-size: 1.7rem;
+  }
+
+  .skill-group {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .contact-row {
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+}
